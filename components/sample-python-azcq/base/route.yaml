@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: sample-python-azcq
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: sample-python-azcq
+    app.kubernetes.io/part-of: sample-python
+  name: sample-python-azcq
+  namespace: bbrownin-tenant
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: sample-python-azcq
+    weight: 100
+status: {}
