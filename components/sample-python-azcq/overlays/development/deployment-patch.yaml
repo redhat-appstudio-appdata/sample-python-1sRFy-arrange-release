@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: sample-python-azcq
+  namespace: bbrownin-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:e424e7de084c4a4d829183dc1c4855bb1b78a8ce7e3961839e8173e5efefa86f
+        name: container-image
+        resources: {}
+status: {}
