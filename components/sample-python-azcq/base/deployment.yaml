@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: sample-python-azcq
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:bbrownin-tenant-sample-python-azcq
+      - image: quay.io/redhat-appstudio/user-workload@sha256:e424e7de084c4a4d829183dc1c4855bb1b78a8ce7e3961839e8173e5efefa86f
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8081
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
